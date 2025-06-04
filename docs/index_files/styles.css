@@ -1,16 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --bg-color: #38bdf8;
+  --card-color: #075985;
+  --bluesky-color: #0285ff;
+  --youtube-color: #ef4444;
+  --subtext-color: #a1a1aa;
+}
+
 body {
-  background-color: #38bdf8;
+  background-color: var(--bg-color);
   font-family: 'Inter', sans-serif;
   color: white;
-  margin: 0;
   padding: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.topnav {
+  background-color: var(--card-color);
+  overflow: hidden;
+  opacity: 0;
+  animation: slideDown 0.6s ease-out 0.2s forwards;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  margin-top: 0.75rem;
+}
+
+.bottom-nav {
+  background-color: var(--card-color);
+  width: auto;
+  padding-inline: 1rem;
+  border-radius: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  bottom: 20px;
+  animation: slideUp 0.6s ease-out 0.2s forwards;
+}
+
+.nav-link {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: color-mix(in srgb, var(--card-color), white 10%);
 }
 
 .container {
   display: flex;
-  min-height: 100vh;
+  margin-top: 1rem;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out 0.4s forwards;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.table-container {
+  width: 100%;
+  margin-top: 1rem;
+  font-family: 'DM Mono', monospace;
+}
+
+.subtext th, .subtext td {
+  text-align: left;
+  padding: 8px 12px;
+}
+
+.subtext th {
+  font-weight: 500;
+  border-bottom: 1px solid var(--subtext-color);
+}
+
+.subtext tr:not(:first-child) td {
+  padding-top: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .card {
@@ -19,10 +105,12 @@ body {
   padding: 2.5rem;
   max-width: 28rem;
   width: 100%;
+  overflow: hidden;
+  height: auto;
   margin: 0 1rem;
   border-radius: 1.5rem;
   text-align: center;
-  background-color: #075985;
+  background-color: var(--card-color);
   backdrop-filter: blur(12px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
   align-items: center;
@@ -31,6 +119,12 @@ body {
 .card h1 {
   font-size: 3rem;
   font-weight: 600;
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  align-self: left;
 }
 
 .card hr {
@@ -46,16 +140,27 @@ body {
 }
 
 .link {
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   color: white;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.subtext .link {
+  color: var(--subtext-color);
 }
 
 .link:hover {
-  text-decoration: underline;
+  background-size: 100% 2px;
 }
 
 .subtext {
-  color: #a1a1aa;
+  color: var(--subtext-color);
   font-style: italic;
 }
 
@@ -68,25 +173,73 @@ body {
 
 .social-icons i {
   transform: scale(1.5);
+  transition: transform 0.3s ease-out;
+}
+
+.social-icons i:hover {
+  transform: scale(1.75) rotate(15deg);
 }
 
 .social-link {
-  transition: all 0.3s ease;
-  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideUpSmall 0.4s ease-out forwards;
 }
+
+.social-link:nth-child(1) { animation-delay: 0.6s; }
+.social-link:nth-child(1) i { animation-delay: 0.65s; }
+
+.social-link:nth-child(2) { animation-delay: 0.7s; }
+.social-link:nth-child(2) i { animation-delay: 0.75s; }
+
+.social-link:nth-child(3) { animation-delay: 0.8s; }
+.social-link:nth-child(3) i { animation-delay: 0.85s; }
 
 .social-link:hover {
   transform: scale(1.1) rotate(12deg);
 }
 
 .bluesky {
-  color: #0285ff;
+  color: var(--bluesky-color);
 }
 
 .youtube {
-  color: #ef4444;
+  color: var(--youtube-color);
 }
 
 .twitter {
   color: white;
+}
+
+@keyframes slideUpSmall {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
