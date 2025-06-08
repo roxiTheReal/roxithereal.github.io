@@ -1,0 +1,62 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Register request template",
+    "type": "object",
+    "properties": {
+        "owner": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email"
+                },
+                "discord": {
+                    "type": "string"
+                }
+            },
+            "required": ["username", "email"]
+        },
+        "records": {
+            "type": "object",
+            "properties": {
+                "A": { "type": "array" },
+                "AAAA": { "type": "array" },
+                "CNAME": { "type": "string" },
+                "URL": { "type": "string" },
+                "MX": { "type": "array" },
+                "TLSA": { "type": "array" },
+                "TXT": { "type": ["string", "array"] },
+                "NS": { "type": "array" },
+                "SRV": { "type": "array" },
+                "CAA": { "type": "array" },
+                "DS": { "type": "array" }
+            }
+        },
+        "services": {
+            "type": "object",
+            "properties": {
+                "discord": { "type": "string" },
+                "vercel": { "type": "string" },
+                "bluesky": { "type": "string" }
+            }
+        },
+        "proxied": {
+            "type": "boolean"
+        },
+        "redirect_config": {
+            "type": "object",
+            "properties": {
+                "custom_paths": {
+                    "type": "object"
+                },
+                "redirect_paths": {
+                    "type": "boolean"
+                }
+            }
+        }
+    },
+    "required": ["owner", "records"]
+}
