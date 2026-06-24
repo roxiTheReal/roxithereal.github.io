@@ -56,6 +56,20 @@ document.querySelectorAll('.hero-name').forEach(heroName => {
   });
 });
 
+const prides = [
+  "trans",
+  "enby",
+  "aroace",
+];
+
+const fyis = [
+  "AI",
+  "Elon Musk",
+  "Donald Trump",
+  "ICE",
+  "MAGAs",
+];
+
 // === TAGLINES ===
 const taglines = [
   "meow :3",
@@ -63,10 +77,25 @@ const taglines = [
   "nothing to look at here",
   "<span class=\"trans\">tramsgrendrer</span>",
   "cool bug facts!<br />one day you will have to answer for your actions...<br />and god... may not be so... merciful.",
-  "WOMEM,,,,",
   "<del>6 7</del> we don't do that shit here",
-  "<em>you, yes you! you are- VEEEERY good!!</em> -heavy tf2"
+  "<em>you, yes you! you are- VEEEERY good!!</em> -heavy tf2",
+  "please do not the cat",
+  "<b>the fog is coming. you need to run.</b>",
+  "i be <span class=\"trans\">transing</span> my <span class=\"trans\">gender</span> :3",
+  "also try Minecraft!",
+  "also try Terraria!",
+  "you've got mail!<br /><small>(it's a pipe bomb)</small>",
+  () => `be <span class="${prides[Math.floor(Math.random() * prides.length)]}">gay</span>, do crime >:3`,
+  () => `fuck ${fyis[Math.floor(Math.random() * fyis.length)]}`,
+  "hey Vsauce, michael here! your home security is great...<br /><em>or is it?</em>",
+  "my source is that i made it the fuck up",
+  "The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues.",
+  "*cat noises*",
 ];
+
+function resolveTagline(tagline) {
+  return typeof tagline === "function" ? tagline() : tagline;
+}
 
 let lastIndex = -1;
 
@@ -76,7 +105,11 @@ function setRandomTagline() {
     index = Math.floor(Math.random() * taglines.length);
   } while (index === lastIndex);
   lastIndex = index;
-  document.querySelector('.hero-tagline').innerHTML = taglines[index];
+
+  const raw = taglines[index];
+  const resolved = resolveTagline(raw);
+
+  document.querySelector('.hero-tagline').innerHTML = resolved;
 }
 
 setRandomTagline();

@@ -59,6 +59,20 @@ img {
   background-clip: text;
 }
 
+.enby {
+  background: linear-gradient(to right, #FCF434, white, #9C59D1, #2C2C2C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.aroace {
+  background: linear-gradient(to right, #E38D00, #E7C601, white, #5FAAD7, #1F3554);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* === NAVBAR === */
 
 .navbar {
@@ -155,6 +169,10 @@ i[data-lucide] {
   justify-content: center;
   height: 100vh;
   gap: 1rem;
+}
+
+.hero-tagline {
+  text-align: center;
 }
 
 .hero-name {
