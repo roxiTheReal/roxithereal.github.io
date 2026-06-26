@@ -29,9 +29,7 @@ const orderedNames = [
 
 // === NAVBAR NAME ===
 document.querySelectorAll(".link-full").forEach((el) => {
-  if (el.textContent.includes("/home/roxi")) {
-    el.textContent = `/home/${primaryName.toLowerCase()}`;
-  }
+  el.textContent = el.textContent.replaceAll("roxi", primaryName.toLowerCase());
 });
 
 // === NAVBAR ===
