@@ -17,6 +17,23 @@ if (window.location.hostname === "da-meower.es.eu.org") {
   });
 }
 
+// === NAMES SETUP ===
+const allNames = ["Roxi", "Kit", "Romi"];
+const subdomain = location.hostname.split(".")[0];
+const primaryName =
+  allNames.find((n) => n.toLowerCase() === subdomain.toLowerCase()) ?? "Roxi";
+const orderedNames = [
+  primaryName,
+  ...allNames.filter((n) => n !== primaryName),
+];
+
+// === NAVBAR NAME ===
+document.querySelectorAll(".link-full").forEach((el) => {
+  if (el.textContent.includes("/home/roxi")) {
+    el.textContent = `/home/${primaryName.toLowerCase()}`;
+  }
+});
+
 // === NAVBAR ===
 document.fonts.ready.then(() => {
   document.querySelectorAll(".nav-link").forEach((link) => {
@@ -41,8 +58,8 @@ document.fonts.ready.then(() => {
 });
 
 // === HERO NAME TYPEWRITER ===
-const base = "Roxi";
-const extra = "/Kit/Romi";
+const base = primaryName;
+const extra = "/" + orderedNames.slice(1).join("/");
 const full = base + extra;
 
 document.querySelectorAll(".hero-name").forEach((heroName) => {
