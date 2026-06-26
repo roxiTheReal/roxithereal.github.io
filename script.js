@@ -63,6 +63,8 @@ const extra = "/" + orderedNames.slice(1).join("/");
 const full = base + extra;
 
 document.querySelectorAll(".hero-name").forEach((heroName) => {
+  heroName.textContent = primaryName;
+
   let interval;
 
   heroName.addEventListener("mouseenter", () => {
@@ -88,6 +90,8 @@ document.querySelectorAll(".hero-name").forEach((heroName) => {
     }, 80);
   });
 });
+
+document.title = `${full.toLowerCase()}'s page :3`;
 
 const prides = ["trans", "enby", "aroace"];
 
