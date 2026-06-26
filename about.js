@@ -32,6 +32,10 @@ document.querySelectorAll(".link-full").forEach((el) => {
   el.textContent = el.textContent.replaceAll("roxi", primaryName.toLowerCase());
 });
 
+// === OTHER NAMES FOR ABOUT ===
+document.querySelector(".other-name-1").textContent = orderedNames[1];
+document.querySelector(".other-name-2").textContent = orderedNames[2];
+
 // === NAVBAR ===
 document.fonts.ready.then(() => {
   document.querySelectorAll(".nav-link").forEach((link) => {
