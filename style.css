@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-variant-ligatures: none;
   height: 100%;
   overflow: hidden;
@@ -29,7 +29,10 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--text-heading);
   line-height: 1.2;
   font-weight: 700;
@@ -53,21 +56,35 @@ img {
 }
 
 .trans {
-  background: linear-gradient(to right, #55CDFC, #F7A8B8, white, #F7A8B8, #55CDFC);
+  background: linear-gradient(
+    to right,
+    #55cdfc,
+    #f7a8b8,
+    white,
+    #f7a8b8,
+    #55cdfc
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .enby {
-  background: linear-gradient(to right, #FCF434, white, #9C59D1, #2C2C2C);
+  background: linear-gradient(to right, #fcf434, white, #9c59d1, #2c2c2c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .aroace {
-  background: linear-gradient(to right, #E38D00, #E7C601, white, #5FAAD7, #1F3554);
+  background: linear-gradient(
+    to right,
+    #e38d00,
+    #e7c601,
+    white,
+    #5faad7,
+    #1f3554
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,7 +101,7 @@ img {
 }
 
 .nav-link {
-  font-family: 'Iosevka Web', monospace;
+  font-family: "Iosevka Web", monospace;
   font-variant-ligatures: none;
   text-decoration: none;
   color: var(--color-orange-500);
@@ -94,7 +111,10 @@ img {
   gap: 0.4rem;
   border-radius: 15px;
   position: relative;
-  transition: color 0.25s ease, background-color 0.25s ease, width 0.25s ease;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    width 0.25s ease;
   overflow: hidden;
 }
 
@@ -111,7 +131,9 @@ img {
   transform: translateY(-50%) translateX(-6px);
   opacity: 0;
   white-space: nowrap;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 i[data-lucide] {
@@ -153,7 +175,7 @@ i[data-lucide] {
 
 .nav-link.active:hover {
   background-color: var(--color-orange-500);
-    color: var(--text-on-orange);
+  color: var(--text-on-orange);
 }
 
 .nav-link:not(.active):hover {
@@ -236,14 +258,38 @@ span.hero-name {
   background-color: var(--text-body);
 }
 
-.social-youtube  { -webkit-mask-image: url('/assets/favicons/youtube.svg');  mask-image: url('/assets/favicons/youtube.svg'); }
-.social-reddit   { -webkit-mask-image: url('/assets/favicons/reddit.svg');   mask-image: url('/assets/favicons/reddit.svg'); }
-.social-bluesky  { -webkit-mask-image: url('/assets/favicons/bluesky.svg');  mask-image: url('/assets/favicons/bluesky.svg'); }
-.social-steam    { -webkit-mask-image: url('/assets/favicons/steam.svg');    mask-image: url('/assets/favicons/steam.svg'); }
-.social-discord  { -webkit-mask-image: url('/assets/favicons/discord.svg');  mask-image: url('/assets/favicons/discord.svg'); }
-.social-matrix   { -webkit-mask-image: url('/assets/favicons/matrix.svg');   mask-image: url('/assets/favicons/matrix.svg'); }
-.social-tumblr   { -webkit-mask-image: url('/assets/favicons/tumblr.svg');   mask-image: url('/assets/favicons/tumblr.svg'); }
-.social-github   { -webkit-mask-image: url('/assets/favicons/github.svg');   mask-image: url('/assets/favicons/github.svg'); }
+.social-youtube {
+  -webkit-mask-image: url("/assets/favicons/youtube.svg");
+  mask-image: url("/assets/favicons/youtube.svg");
+}
+.social-reddit {
+  -webkit-mask-image: url("/assets/favicons/reddit.svg");
+  mask-image: url("/assets/favicons/reddit.svg");
+}
+.social-bluesky {
+  -webkit-mask-image: url("/assets/favicons/bluesky.svg");
+  mask-image: url("/assets/favicons/bluesky.svg");
+}
+.social-steam {
+  -webkit-mask-image: url("/assets/favicons/steam.svg");
+  mask-image: url("/assets/favicons/steam.svg");
+}
+.social-discord {
+  -webkit-mask-image: url("/assets/favicons/discord.svg");
+  mask-image: url("/assets/favicons/discord.svg");
+}
+.social-matrix {
+  -webkit-mask-image: url("/assets/favicons/matrix.svg");
+  mask-image: url("/assets/favicons/matrix.svg");
+}
+.social-tumblr {
+  -webkit-mask-image: url("/assets/favicons/tumblr.svg");
+  mask-image: url("/assets/favicons/tumblr.svg");
+}
+.social-github {
+  -webkit-mask-image: url("/assets/favicons/github.svg");
+  mask-image: url("/assets/favicons/github.svg");
+}
 
 /* === ABOUT PAGE === */
 
@@ -256,7 +302,7 @@ body.scrollable {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   height: 60vh;
-  background-image: url('/assets/images/banner.png');
+  background-image: url("/assets/images/banner.png");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -265,7 +311,7 @@ body.scrollable {
 }
 
 .about-banner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -276,7 +322,7 @@ body.scrollable {
 }
 
 .about-banner::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -332,7 +378,7 @@ body.scrollable {
 }
 
 .about-section ul li::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -349,13 +395,13 @@ body.scrollable {
 }
 
 .about-section ul li:nth-child(odd)::before {
-  -webkit-mask-image: url('/assets/bullets/transgender.svg');
-  mask-image: url('/assets/bullets/transgender.svg');
+  -webkit-mask-image: url("/assets/bullets/transgender.svg");
+  mask-image: url("/assets/bullets/transgender.svg");
 }
 
 .about-section ul li:nth-child(even)::before {
-  -webkit-mask-image: url('/assets/bullets/non-binary.svg');
-  mask-image: url('/assets/bullets/non-binary.svg');
+  -webkit-mask-image: url("/assets/bullets/non-binary.svg");
+  mask-image: url("/assets/bullets/non-binary.svg");
 }
 
 .about-section ul li span {
@@ -397,7 +443,9 @@ body.scrollable {
   border-radius: 8px;
   border: 1px solid var(--border);
   color: var(--text-body);
-  transition: background-color 0.25s ease, border-color 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .post-link:hover {
@@ -450,7 +498,8 @@ body.scrollable {
   line-height: 1.8;
 }
 
-.post-body h2, .post-body h3 {
+.post-body h2,
+.post-body h3 {
   margin-top: 2rem;
 }
 
@@ -459,7 +508,7 @@ body.scrollable {
 }
 
 .post-body code {
-  font-family: 'Iosevka Web', monospace;
+  font-family: "Iosevka Web", monospace;
   font-size: 0.9rem;
   background-color: var(--bg-surface);
   padding: 0.15rem 0.4rem;
@@ -504,4 +553,49 @@ body.scrollable {
   color: var(--text-muted);
   font-size: 0.875rem;
   justify-content: flex-end; /* right-aligned */
+}
+
+/* === MIRROR NOTICE === */
+
+#mirror-notice {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--bg-surface);
+  color: var(--text-body);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  animation: slidein 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideout {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+
+#mirror-notice.hiding {
+  animation: slideout 0.3s ease forwards;
 }
