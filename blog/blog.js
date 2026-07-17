@@ -1,24 +1,24 @@
 // === LUCIDE ICONS ===
 lucide.createIcons();
 
-// if (window.location.hostname === "da-meower.es.eu.org") {
-//   const notice = document.getElementById("mirror-notice");
-//   notice.style.display = "block";
+if (window.location.hostname === "da-meower.es.eu.org") {
+  const notice = document.getElementById("mirror-notice");
+  notice.style.display = "block";
 
-//   notice.addEventListener("click", () => {
-//     notice.classList.add("hiding");
-//     notice.addEventListener(
-//       "animationend",
-//       () => {
-//         notice.style.display = "none";
-//       },
-//       { once: true },
-//     );
-//   });
-// }
+  notice.addEventListener("click", () => {
+    notice.classList.add("hiding");
+    notice.addEventListener(
+      "animationend",
+      () => {
+        notice.style.display = "none";
+      },
+      { once: true },
+    );
+  });
+}
 
 // === NAMES SETUP ===
-const allNames = ["Roxi", "Kit", "Romi", "Junix"];
+const allNames = ["Roxi", "Kit", "Romi"];
 const subdomain = location.hostname.split(".")[0];
 const primaryName =
   allNames.find((n) => n.toLowerCase() === subdomain.toLowerCase()) ?? "Roxi";
