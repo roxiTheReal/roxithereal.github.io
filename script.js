@@ -18,7 +18,7 @@ if (window.location.hostname === "da-meower.es.eu.org") {
 }
 
 // === NAMES SETUP ===
-const allNames = ["Roxi", "Kit", "Romi"];
+const allNames = ["Roxi", "Kit", "Romi", "Junix"];
 const subdomain = location.hostname.split(".")[0];
 const primaryName =
   allNames.find((n) => n.toLowerCase() === subdomain.toLowerCase()) ?? "Roxi";
